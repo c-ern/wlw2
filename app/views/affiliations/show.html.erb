@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Company:</b>
+  <%= @affiliation.company_id %>
+</p>
+
+<p>
+  <b>Facility:</b>
+  <%= @affiliation.facility_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_affiliation_path(@affiliation) %> |
+<%= link_to 'Back', affiliations_path %>
