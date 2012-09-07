@@ -25,7 +25,7 @@ class CompaniesController < ApplicationController
   # GET /companies/new.json
   def new
     @company = Company.new
-    3.times { @company.facilities.build }
+    3.times { @company.facilities.build } #damit die Felder angezeigt werden
 
     respond_to do |format|
       format.html # new.html.erb

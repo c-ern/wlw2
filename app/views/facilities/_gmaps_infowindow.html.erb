@@ -1,0 +1,7 @@
+<ul>
+  <li><%= image_tag(object.companies.first.image_url) %></li>
+  <li><%= object.companies.first.name %></li>
+  <li><%= object.name %></li>
+  <li><%= object.address %></li>
+  <li><%= link_to "Wikipedia-Artikel", object.companies.first.wikipedia_url %></li>
+</ul>

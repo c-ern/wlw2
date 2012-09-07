@@ -1,3 +1,5 @@
+<%= stylesheet_link_tag 'gmaps4rails' %>
+
 <p id="notice"><%= notice %></p>
 
 
@@ -53,7 +55,9 @@
 
 <%= image_tag "http://maps.google.com/maps/api/staticmap?center=#{@facility.latitude},#{@facility.longitude}&size=500x500&zoom=8&maptype=hybrid#{peter}&sensor=false" %>
 
-
+<%= gmaps4rails(@json) %>
 
 <%= link_to 'Edit', edit_facility_path(@facility) %> |
 <%= link_to 'Back', facilities_path %>
+
+<%= yield :scripts %>

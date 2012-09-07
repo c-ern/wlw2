@@ -6,4 +6,10 @@ class Facility < ActiveRecord::Base
   has_many :affiliations
   has_many :companies, :through => :affiliations
   accepts_nested_attributes_for :companies, :affiliations
+
+  acts_as_gmappable
+    def gmaps4rails_address
+      self.address
+    end
+
 end

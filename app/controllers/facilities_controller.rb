@@ -14,7 +14,22 @@ class FacilitiesController < ApplicationController
   # GET /facilities/1.json
   def show
     @facility = Facility.find(params[:id])
+    @json = Facility.all.to_gmaps4rails do |facility, marker|
+      marker.infowindow render_to_string(:partial => "gmaps_infowindow", :locals => { :object => facility})
 
+      #{}"<p>#{facility.companies.first.name}</p>"
+      
+      marker.picture({
+        :picture => "/assets/#{facility.companies.first.image_url}",
+        :width =>  30,        
+        :height => 30
+      })
+
+      marker.title "#{facility.companies.first.name}, #{facility.name}"
+    end
+
+    # @markers = Facility.first.to_gmaps4rails
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @facility }
@@ -81,4 +96,6 @@ class FacilitiesController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+
 end

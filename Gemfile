@@ -38,4 +38,5 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 gem 'geocoder'
+gem 'gmaps4rails'
 # hier installiere ich geocoder
