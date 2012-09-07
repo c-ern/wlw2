@@ -25,6 +25,7 @@ class FacilitiesController < ApplicationController
   # GET /facilities/new.json
   def new
     @facility = Facility.new
+    @facility.affiliations.build # damit die Felder angelegt werden
 
     respond_to do |format|
       format.html # new.html.erb

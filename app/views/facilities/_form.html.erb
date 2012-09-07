@@ -11,6 +11,17 @@
     </div>
   <% end %>
 
+
+    <%= f.fields_for :affiliations do |builder| %> <!-- Hier zeige ich die Daten aus den Mutterfirmen an -->
+    <fieldset>
+      <%= builder.label :company_id, "Mutterfirma: " %><br />
+      <%= builder.text_field :company_id %><br />
+    </fieldset>
+  <% end -%>
+
+
+
+
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>

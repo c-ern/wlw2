@@ -2,6 +2,8 @@
 
 <table>
   <tr>
+    <th>ID</th>
+    <th>Mutterfirma</th> <!-- Damit ich weiß, wozu der Standort gehört -->
     <th>Name</th>
     <th>Address</th>
     <th>Latitude</th>
@@ -11,18 +13,26 @@
     <th></th>
   </tr>
 
+<% schmidt="" %>
 <% @facilities.each do |facility| %>
+   <!-- Hier erstelle ich aus den Positionen die Werte für die Karte -->
+    <% schmidt=schmidt + "&markers=color:blue%7C" + facility.latitude.to_s + "," + facility.longitude.to_s %>
   <tr>
+    <td><%= facility.id %></td>
+    <td><%= facility.companies.first.name %></td>
     <td><%= facility.name %></td>
     <td><%= facility.address %></td>
-    <td><%= facility.latitude %></td>
-    <td><%= facility.longitude %></td>
+    <td><%= facility.latitude.round(3) %></td>
+    <td><%= facility.longitude.round(3) %></td>
     <td><%= link_to 'Show', facility %></td>
     <td><%= link_to 'Edit', edit_facility_path(facility) %></td>
     <td><%= link_to 'Destroy', facility, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
+
+<!-- Hier zeige ich dann die Karte aus den Werten an -->
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=500x500&zoom=8&maptype=hybrid#{schmidt}&sensor=false" %>
 
 <br />
 
