@@ -1,5 +1,19 @@
 <p id="notice"><%= notice %></p>
 
+
+<!-- <p>
+  <% @facility.companies.each do |company| %>
+  	<%= image_tag(company.image_url) %>
+  <% end %>
+</p>
+ -->
+
+<!-- Beide Möglichkeiten zeigen das Logo der Mutterfirma an -->
+
+<p>
+  <%= image_tag(@facility.companies.first.image_url) %>
+</p>
+
 <p>
   <b>Name:</b>
   <%= @facility.name %>

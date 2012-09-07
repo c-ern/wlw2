@@ -16,13 +16,28 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
+    <%= image_tag(@company.image_url) %><br /> <!-- hier wird das Logo angezeigt -->
     <%= f.label :image_url %><br />
     <%= f.text_field :image_url %>
   </div>
+  
   <div class="field">
     <%= f.label :wikipedia_url %><br />
     <%= f.text_field :wikipedia_url %>
+    <%= link_to "Wikipedia-Artikel", @company.wikipedia_url %> <!-- Hier mache ich die URL klickbar -->
   </div>
+  
+  <%= f.fields_for :facilities do |builder| %> <!-- Hier zeige ich die Daten aus den Standorten an -->
+    <fieldset>
+      <%= builder.label :name, "Standortname: " %><br />
+      <%= builder.text_field :name %><br />
+      <%= builder.label :address, "Adresse: " %><br />
+      <%= builder.text_field :address %>
+    </fieldset>
+  <% end -%>
+
+
+
   <div class="actions">
     <%= f.submit %>
   </div>
