@@ -11,6 +11,14 @@
     </div>
   <% end %>
 
+<!--
+<ul>
+<%# for ids in @affiliation.each %>
+  <li><%#= ids.company_id %></li>
+  <%# end %>
+</ul>    
+-->
+<!-- War mal geplant, um die verschiedenen IDs neben den Firmennamen aufzulisten -->
 
     <%= f.fields_for :affiliations do |builder| %> <!-- Hier zeige ich die Daten aus den Mutterfirmen an -->
     <fieldset>
@@ -39,6 +47,12 @@
     <%= f.label :longitude %><br />
     <%= f.text_field :longitude %>
   </div>
+  
+  <div class="field">
+    <%= f.label :wikipedia_url %><br />
+    <%= f.text_field :wikipedia_url %>
+  </div>
+  
   <div class="actions">
     <%= f.submit %>
   </div>

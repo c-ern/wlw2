@@ -1,5 +1,5 @@
 class Facility < ActiveRecord::Base
-  attr_accessible :address, :latitude, :longitude, :name, :companies_attributes, :affiliations_attributes
+  attr_accessible :address, :latitude, :longitude, :name, :companies_attributes, :affiliations_attributes, :wikipedia_url
   
   # die folgenden beiden Zeilen müssen für das Betanken der Datenbank mit seeds.rb auskommentiert werden
   geocoded_by :address # hier sage ich, dass der geocode auf der Adresse basiert

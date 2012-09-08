@@ -51,6 +51,7 @@ class FacilitiesController < ApplicationController
   # GET /facilities/1/edit
   def edit
     @facility = Facility.find(params[:id])
+    @affiliation = Affiliation.all
   end
 
   # POST /facilities

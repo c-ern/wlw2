@@ -1,0 +1,14 @@
+1:
+rails generate migration add_wikipedia_url_to_facility wikipedia_url:string
+
+2:
+rake db:migrate
+
+3: 
+Datenfelder befüllen, damit die Felder (4) angezeigt werden
+Facility.all.each do |f|
+  f.update_attributes("wikipedia_url" => "Hier Artikel eintragen")
+end
+
+4:
+Views (_form, show) anpassen
