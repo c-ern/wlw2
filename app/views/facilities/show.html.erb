@@ -28,12 +28,12 @@
 
 <p>
   <b>Latitude:</b>
-  <%= @facility.latitude.round(3) %>
+  <%= @facility.latitude %>
 </p>
 
 <p>
   <b>Longitude:</b>
-  <%= @facility.longitude.round(3) %>
+  <%= @facility.longitude %>
 </p>
 
 <p>
@@ -54,12 +54,12 @@
 <%#= image_tag "http://maps.google.com/maps/api/staticmap?size=400x400&zoom=14&maptype=hybrid&markers=color:blue%7C#{@facility.latitude},#{@facility.longitude}&sensor=false" %>
 
 <!-- Und hier versuche ich jetzt mal, mehrere facilities anzuzeigen -->
-<% peter="&markers=color:red%7C" + @facility.latitude.to_s + "," + @facility.longitude.to_s %>
-<% for facility in @facility.nearbys(100 , :units => :km) %>
-  <% peter=peter + "&markers=color:blue%7C" + facility.latitude.to_s + "," + facility.longitude.to_s %>
-<% end %>
+<%# peter="&markers=color:red%7C" + @facility.latitude.to_s + "," + @facility.longitude.to_s %>
+<%# for facility in @facility.nearbys(100 , :units => :km) %>
+  <%# peter=peter + "&markers=color:blue%7C" + facility.latitude.to_s + "," + facility.longitude.to_s %>
+<%# end %>
 
-<%= image_tag "http://maps.google.com/maps/api/staticmap?center=#{@facility.latitude},#{@facility.longitude}&size=500x500&zoom=8&maptype=hybrid#{peter}&sensor=false" %>
+<%#= image_tag "http://maps.google.com/maps/api/staticmap?center=#{@facility.latitude},#{@facility.longitude}&size=500x500&zoom=8&maptype=hybrid#{peter}&sensor=false" %>
 
 <%#= gmaps4rails(@json) %>
 <%= gmaps(@gmapsoptions) %>

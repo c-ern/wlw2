@@ -28,13 +28,14 @@ class FacilitiesController < ApplicationController
       marker.title "#{facility.companies.first.name}, #{facility.name}"
     end
     @gmapsoptions = {
-         "map_options" => {center_latitude: 40, 
-                           center_longitude: 73,
-                           "detect_location" => true,
-                           "center_on_user" => true,
+         "map_options" => {center_latitude: @facility.latitude, 
+                           center_longitude: @facility.longitude,
+                           "detect_location" => false,
+                           "center_on_user" => false,
                            "auto_adjust" => false,
-                           "auto_zoom" => false,
-                           "zoom" => 8 },
+                           "auto_zoom" => true,
+                           "zoom" => 9,
+                           "provider" => "google"},
          "markers" => { "data" => @json, "auto-adjust" => false }
          }
 

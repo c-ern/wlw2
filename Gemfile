@@ -40,3 +40,5 @@ gem 'jquery-rails'
 gem 'geocoder'
 gem 'gmaps4rails'
 # hier installiere ich geocoder
+
+gem 'thin'
