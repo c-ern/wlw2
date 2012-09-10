@@ -27,6 +27,16 @@ class FacilitiesController < ApplicationController
 
       marker.title "#{facility.companies.first.name}, #{facility.name}"
     end
+    @gmapsoptions = {
+         "map_options" => {center_latitude: 40, 
+                           center_longitude: 73,
+                           "detect_location" => true,
+                           "center_on_user" => true,
+                           "auto_adjust" => false,
+                           "auto_zoom" => false,
+                           "zoom" => 8 },
+         "markers" => { "data" => @json, "auto-adjust" => false }
+         }
 
     # @markers = Facility.first.to_gmaps4rails
     
