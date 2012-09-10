@@ -40,3 +40,11 @@ gem 'jquery-rails'
 gem 'geocoder'
 gem 'gmaps4rails'
 # hier installiere ich geocoder
+
+group :production do
+  gem 'pg'
+end
+
+group :development, :test do
+  gem 'sqlite3'
+end
