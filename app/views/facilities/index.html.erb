@@ -19,7 +19,13 @@
     <% schmidt=schmidt + "&markers=color:blue%7C" + facility.latitude.to_s + "," + facility.longitude.to_s %>
   <tr>
     <td><%= facility.id %></td>
-    <td><%= facility.companies.first.name %></td>
+    <% if facility.companies.empty?
+        company_name = "---COMPANY GELÖSCHT---"
+    else
+        company_name = facility.companies.first.name
+    end
+    %>   
+    <td><%= company_name %></td>  
     <td><%= facility.name %></td>
     <td><%= facility.address %></td>
     <td><%= facility.latitude %></td>

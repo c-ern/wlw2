@@ -10,7 +10,7 @@ namespace :export do
 	  end
 	
 
-      puts "Company.create(#{company.serializable_hash.delete_if {|key, value| ['created_at','updated_at','id'].include?(key)}.to_s.gsub(/[{}]/,'')}).facilities.create([#{werk})]"
+      puts "Company.create(#{company.serializable_hash.delete_if {|key, value| ['created_at','updated_at','id'].include?(key)}.to_s.gsub(/[{}]/,'')}).facilities.create([#{werk}])"
       
     end
   end

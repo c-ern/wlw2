@@ -3,5 +3,6 @@ class Company < ActiveRecord::Base
 
   has_many :affiliations
   has_many :facilities, :through => :affiliations
-  accepts_nested_attributes_for :facilities
+  before_destroy {|company| company.facilities.destroy_all }
+  accepts_nested_attributes_for :facilities, :reject_if => lambda { |a| a[:name].blank? }
 end

@@ -5,9 +5,9 @@ class Facility < ActiveRecord::Base
   geocoded_by :address # hier sage ich, dass der geocode auf der Adresse basiert
   after_validation :geocode, :if => :address_changed?
 
-  has_many :affiliations
+  has_many :affiliations, :dependent => :destroy
   has_many :companies, :through => :affiliations
-  accepts_nested_attributes_for :companies, :affiliations
+  accepts_nested_attributes_for :companies, :affiliations, :allow_destroy => true
 
   acts_as_gmappable :process_geocoding => false
     def gmaps4rails_address

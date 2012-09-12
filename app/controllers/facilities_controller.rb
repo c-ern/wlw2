@@ -30,12 +30,12 @@ class FacilitiesController < ApplicationController
     @gmapsoptions = {
          "map_options" => {center_latitude: @facility.latitude, 
                            center_longitude: @facility.longitude,
-                           "detect_location" => false,
-                           "center_on_user" => false,
-                           "auto_adjust" => false,
-                           "auto_zoom" => true,
-                           "zoom" => 9,
-                           "provider" => "google"},
+                           detect_location: false,
+                           center_on_user: false,
+                           auto_adjust: false,
+                           auto_zoom: true,
+                           zoom: 9,
+                           provider: "google"},
          "markers" => { "data" => @json, "auto-adjust" => false }
          }
 

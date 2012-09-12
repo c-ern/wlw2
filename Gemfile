@@ -40,11 +40,9 @@ gem 'geocoder'
 gem 'gmaps4rails'
 # hier installiere ich geocoder
 
+
 gem 'thin'
 
-<<<<<<< HEAD
-gem 'thin'
-=======
 group :production do
   gem 'pg'
 end
@@ -52,4 +50,3 @@ end
 group :development, :test do
   gem 'sqlite3'
 end
->>>>>>> 986133efad24b0a1f4d4e464ecb1048afa94e0fc
