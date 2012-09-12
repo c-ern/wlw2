@@ -1,0 +1,43 @@
+html, body {
+    height:100%;
+	margin:0;
+    padding:0;
+    background-color: #81e93b;
+}
+
+#wrapper {    
+    min-height:100%;
+    background-color: #e55c0c;
+    margin-left:10px;
+    margin-right: 0px;
+    position: relative;
+}
+#footer {
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:2em;
+    background-color: #9d41a6;
+ }
+ #rechtsoben {
+ 	position:absolute;
+ 	right: 0;
+ 	width: 45%;
+ 	height: 45%;
+ 	background-color: #6dff5d;
+ }
+ #linksoben {
+ 	position:absolute;
+ 	left: 0;
+ 	width: 45%;
+ 	height: 45%;
+ 	background-color: #147257;
+ }
+ #rechtsunten {
+ 	position:absolute;
+ 	bottom: 4%;
+ 	right: 0;
+ 	width: 45%;
+ 	height: 45%;
+ 	background-color: #e68b2b;
+ }

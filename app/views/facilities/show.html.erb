@@ -1,80 +1,89 @@
 <%= stylesheet_link_tag 'gmaps4rails' %>
-
-<p id="notice"><%= notice %></p>
-
-
-<!-- <p>
-  <% @facility.companies.each do |company| %>
-  	<%= image_tag(company.image_url) %>
-  <% end %>
-</p>
- -->
-
-<!-- Beide Möglichkeiten zeigen das Logo der Mutterfirma an -->
-
-<div id="news">
-  <iframe id="newsframe" src="http://m.bing.com/news/search?q=<%= @facility.companies.first.name %>&FORM=NLABSS&btsrc=internal"></iframe>
-</div>
-
-<div id="auflistung">
-  <p>
-    <%= image_tag(@facility.companies.first.image_url) %>
+<div id="seite">
+  <p id="notice"><%= notice %></p>
+  
+  
+  <!-- <p>
+    <% @facility.companies.each do |company| %>
+    	<%= image_tag(company.image_url) %>
+    <% end %>
   </p>
+   -->
   
-  <p>
-    <b>Name:</b>
-    <%= @facility.name %>
-  </p>
-  
-  <p>
-    <b>Address:</b>
-    <%= @facility.address %>
-  </p>
-  
-  <p>
-    <b>Latitude:</b>
-    <%= @facility.latitude %>
-  </p>
-  
-  <p>
-    <b>Longitude:</b>
-    <%= @facility.longitude %>
-  </p>
-  
-  <p>
-    <b>Wikipedia_url:</b>
-    <%= @facility.wikipedia_url %>
-  </p>
-  
-  
-  <!-- hier möchte ich jetzt alle anderen Werke in der Nähe anzeigen -->
-  <h3>Werke in der Nähe</h3>
-  <ul>
-  <% for facility in @facility.nearbys(100, :units => :km) %>
-    <li><%= link_to facility.address, facility %> (<%= facility.distance.round(2) %> Kilometer)</li>
-  <% end %>
-  </ul>
+  <!-- Beide Möglichkeiten zeigen das Logo der Mutterfirma an -->
+    <div id="news">
+      <iframe id="newsframe" src="http://m.bing.com/news/search?q=<%= @facility.companies.first.name %>&FORM=NLABSS&btsrc=internal"></iframe>
+    </div>
+    
+    <div id="auflistung">
+      <p>
+        <%= image_tag(@facility.companies.first.image_url) %>
+      </p>
+      
+      <p>
+        <b>Name:</b>
+        <%= @facility.name %>
+      </p>
+      
+      <p>
+        <b>Address:</b>
+        <%= @facility.address %>
+      </p>
+      
+      <p>
+        <b>Latitude:</b>
+        <%= @facility.latitude %>
+      </p>
+      
+      <p>
+        <b>Longitude:</b>
+        <%= @facility.longitude %>
+      </p>
+      
+      <p>
+        <b>Wikipedia_url:</b>
+        <%= link_to(@facility.wikipedia_url, @facility.wikipedia_url) %>
+      </p>
+      
+      
+      <!-- hier möchte ich jetzt alle anderen Werke in der Nähe anzeigen -->
+      <h3>Werke in der Nähe</h3>
+      <ul>
+      <% for facility in @facility.nearbys(100, :units => :km) %>
+        <li><%= link_to facility.address, facility %> (<%= facility.  distance.round(2) %> Kilometer)</li>
+      <% end %>
+      </ul>
+     
+     </div>
+
+    <div id="wikipedia">
+      <% mobwik = @facility.wikipedia_url %>
+      <% if mobwik.include? '.wikipedia' %>
+      <% mobwik[".wikipedia"] = ".m.wikipedia" %>
+      <% end %>
+      <iframe id="wikiframe" src="<%= mobwik %>"></iframe>
+    </div>
  
- </div> 
   
-
-
-<!-- Hier kommt jetzt Google Maps ins Spiel -->
-<%#= image_tag "http://maps.google.com/maps/api/staticmap?size=400x400&zoom=14&maptype=hybrid&markers=color:blue%7C#{@facility.latitude},#{@facility.longitude}&sensor=false" %>
-
-<!-- Und hier versuche ich jetzt mal, mehrere facilities anzuzeigen -->
-<%# peter="&markers=color:red%7C" + @facility.latitude.to_s + "," + @facility.longitude.to_s %>
-<%# for facility in @facility.nearbys(100 , :units => :km) %>
-  <%# peter=peter + "&markers=color:blue%7C" + facility.latitude.to_s + "," + facility.longitude.to_s %>
-<%# end %>
-
-<%#= image_tag "http://maps.google.com/maps/api/staticmap?center=#{@facility.latitude},#{@facility.longitude}&size=500x500&zoom=8&maptype=hybrid#{peter}&sensor=false" %>
-
-<%#= gmaps4rails(@json) %>
-<%= gmaps(@gmapsoptions) %>
-
-<%= link_to 'Edit', edit_facility_path(@facility) %> |
-<%= link_to 'Back', facilities_path %>
+  <!-- Hier kommt jetzt Google Maps ins Spiel -->
+  <%#= image_tag "http://maps.google.com/maps/api/staticmap?size=400x400&zoom=14&maptype=hybrid&markers=color:blue%7C#{@facility.latitude},#{@facility. longitude}&sensor=false" %>
+  
+  <!-- Und hier versuche ich jetzt mal, mehrere facilities anzuzeigen -->
+  <%# peter="&markers=color:red%7C" + @facility.latitude.to_s + "," + @facility.longitude.to_s %>
+  <%# for facility in @facility.nearbys(100 , :units => :km) %>
+    <%# peter=peter + "&markers=color:blue%7C" + facility.latitude.to_s + "," + facility.longitude.to_s %>
+  <%# end %>
+  
+  <%#= image_tag "http://maps.google.com/maps/api/staticmap?center=#{@facility.latitude},#{@facility.longitude}&size=500x500&zoom=8&maptype=hybrid#{peter}&sensor=false" %>
+  
+  <%#= gmaps4rails(@json) %>
+  <%= gmaps(@gmapsoptions) %>
+  
+  <div id="footer"> 
+    <%= link_to 'Edit', edit_facility_path(@facility) %> |
+    <%= link_to 'Back', facilities_path %>
+  </div>
+</div>
 
 <%= yield :scripts %>
 

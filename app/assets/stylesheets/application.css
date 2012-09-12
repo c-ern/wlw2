@@ -11,10 +11,38 @@
  *= require_self
  *= require_tree .
  */
+html, body {
+	background-color: #333333;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+#seite {
+    text-align: left;    /* Seiteninhalt wieder links ausrichten */
+    margin: 0;      /* standardkonforme horizontale Zentrierung */
+    width: 100%;
+    padding: 0;
+    background-color: #330000;
+    border: 2px ridge silver;
+	  min-height: 100%; /* Mindesthöhe für moderne Browser */
+	  height:auto !important; /* Important Regel für moderne Browser */ 
+}
+
+
 #news {
-  float: right;
-  width: 50%;
-  height: 45%;
+/*  float: right;
+  width: 45%;
+  height: 100%;
+  padding-right: 10px;
+  margin-right: 0;
+  margin-left: auto;*/
+  position:absolute;
+  bottom:3em;
+  width:49%;
+  left: 0;
+  height:45%;
+  background-color: #CC6666;
 }
 
 #newsframe {
@@ -23,7 +51,34 @@
 }
 
 #auflistung {
-  width: 50%;
-  height: 50%;
+/*  width: 50%;
+  min-height: 50%;
+  max-height: 50%;
   background-color:#00FF00;
+  margin-right: auto;
+  margin-left: 0;*/
+  position:absolute;
+  left: 0;
+  width: 38%;
+  height: 45%;
+  background-color: #FFFFCC;
 }
+#wikipedia {
+  position:absolute;
+  bottom: 3em;
+  right: 0;
+  width: 49%;
+  height: 45%;
+  background-color: #663333;
+ }
+#wikiframe {
+  width: 100%;
+  height: 100%;
+}
+#footer {
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:2em;
+    background-color: #336699;
+ }
