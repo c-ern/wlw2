@@ -11,3 +11,19 @@
  *= require_self
  *= require_tree .
  */
+#news {
+  float: right;
+  width: 50%;
+  height: 45%;
+}
+
+#newsframe {
+  width: 100%;
+  height: 100%;
+}
+
+#auflistung {
+  width: 50%;
+  height: 50%;
+  background-color:#00FF00;
+}

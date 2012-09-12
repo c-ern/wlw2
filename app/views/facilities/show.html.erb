@@ -12,48 +12,51 @@
 
 <!-- Beide Möglichkeiten zeigen das Logo der Mutterfirma an -->
 
-<p>
-  <%= image_tag(@facility.companies.first.image_url) %>
-</p>
+<div id="news">
+  <iframe id="newsframe" src="http://m.bing.com/news/search?q=<%= @facility.companies.first.name %>&FORM=NLABSS&btsrc=internal"></iframe>
+</div>
 
-<p>
-  <b>Name:</b>
-  <%= @facility.name %>
-</p>
-
-<p>
-  <b>Address:</b>
-  <%= @facility.address %>
-</p>
-
-<p>
-  <b>Latitude:</b>
-  <%= @facility.latitude %>
-</p>
-
-<p>
-  <b>Longitude:</b>
-  <%= @facility.longitude %>
-</p>
-
-<p>
-  <b>Wikipedia_url:</b>
-  <%= @facility.wikipedia_url %>
-</p>
-
-
-<!-- hier möchte ich jetzt alle anderen Werke in der Nähe anzeigen -->
-<h3>Werke in der Nähe</h3>
-<ul>
-<% for facility in @facility.nearbys(100, :units => :km) %>
-  <li><%= link_to facility.address, facility %> (<%= facility.distance.round(2) %> Kilometer)</li>
-<% end %>
-</ul>
-
-
-
-
-<iframe frameborder="0" width="500" height="250" marginwidth="0" marginheight="0" src="http://m.bing.com/news/search?q=<%= @facility.companies.first.name %>&FORM=NLABSS&btsrc=internal"></iframe>
+<div id="auflistung">
+  <p>
+    <%= image_tag(@facility.companies.first.image_url) %>
+  </p>
+  
+  <p>
+    <b>Name:</b>
+    <%= @facility.name %>
+  </p>
+  
+  <p>
+    <b>Address:</b>
+    <%= @facility.address %>
+  </p>
+  
+  <p>
+    <b>Latitude:</b>
+    <%= @facility.latitude %>
+  </p>
+  
+  <p>
+    <b>Longitude:</b>
+    <%= @facility.longitude %>
+  </p>
+  
+  <p>
+    <b>Wikipedia_url:</b>
+    <%= @facility.wikipedia_url %>
+  </p>
+  
+  
+  <!-- hier möchte ich jetzt alle anderen Werke in der Nähe anzeigen -->
+  <h3>Werke in der Nähe</h3>
+  <ul>
+  <% for facility in @facility.nearbys(100, :units => :km) %>
+    <li><%= link_to facility.address, facility %> (<%= facility.distance.round(2) %> Kilometer)</li>
+  <% end %>
+  </ul>
+ 
+ </div> 
+  
 
 
 <!-- Hier kommt jetzt Google Maps ins Spiel -->
