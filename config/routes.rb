@@ -1,4 +1,8 @@
 Wlw2::Application.routes.draw do
+  resources :manufactures
+
+  resources :products
+
   resources :affiliations
 
   resources :facilities
