@@ -20,18 +20,24 @@
 -->
 <!-- War mal geplant, um die verschiedenen IDs neben den Firmennamen aufzulisten -->
 
-    <%= f.fields_for :affiliations do |builder| %> <!-- Hier zeige ich die Daten aus den Mutterfirmen an -->
+<!--   <%#= f.fields_for :affiliations do |builder| %>  Hier zeige ich die Daten aus den Mutterfirmen an
     <fieldset>
-      <%= builder.label :company_id, "Mutterfirma: " %><br />
-      <%= builder.text_field :company_id %><br />
+      <%#= builder.label :company_id, "Mutterfirma: " %><br />
+      <%#= builder.text_field :company_id %><br />
     
     </fieldset>
-  <% end -%>
+  <%# end -%> -->
+  
+  <div class="field">
+  <%= collection_select(:facility, :company_ids, Company.all, :id, :name, {}, { :multiple => true } )%>
+  </div>
+
 
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
+
   <div class="field">
     <%= f.label :address %><br />
     <%= f.text_field :address %>

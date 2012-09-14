@@ -1,0 +1,34 @@
+Hi,
+
+I have three tables via many-to-many-association: Supermarket, Product and Supply.
+Each Supermarket can hold many products and each product can be sold in many supermarkets. The association is build via the Supply-model.
+
+
+    class Supermarket < ActiveRecord::Base
+      attr_accessible :name, :address, :products_attributes
+    
+      has_many :supplies
+      has_many :products, :through => :supplies
+    
+      accepts_nested_attributes_for :products
+    end
+
+    class Product < ActiveRecord::Base
+      attr_accessible :name, :supermarkets_attributes
+      
+      has_many :supplies,
+      has_many :supermarkets, :through => :supplies
+      accepts_nested_attributes_for :supermarkets
+    end
+
+    class Supply < ActiveRecord::Base
+      attr_accessible :supermarket_id, :product_id
+    
+      belongs_to :supermarket
+      belongs_to :product
+    
+    end
+
+I have created the scaffolds and populated the Supermarket-table.
+In my Product form, i want to use one (or more) drop-down-menu(s) to select the correspondent Supermarket-name(s). Goal is to create a new product while also creating the association via the Supply-table.
+What should the code look like in form and/or controller?
