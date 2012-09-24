@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Facility:</b>
+  <%= @assembly.facility_id %>
+</p>
+
+<p>
+  <b>Combination:</b>
+  <%= @assembly.combination_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_assembly_path(@assembly) %> |
+<%= link_to 'Back', assemblies_path %>

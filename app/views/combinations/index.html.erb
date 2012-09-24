@@ -1,0 +1,25 @@
+<h1>Listing combinations</h1>
+
+<table>
+  <tr>
+    <th>Product</th>
+    <th>Car body style</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @combinations.each do |combination| %>
+  <tr>
+    <td><%= combination.product_id %></td>
+    <td><%= combination.car_body_style_id %></td>
+    <td><%= link_to 'Show', combination %></td>
+    <td><%= link_to 'Edit', edit_combination_path(combination) %></td>
+    <td><%= link_to 'Destroy', combination, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Combination', new_combination_path %>

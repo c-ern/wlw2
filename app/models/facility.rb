@@ -7,6 +7,10 @@ class Facility < ActiveRecord::Base
 
   has_many :affiliations, :dependent => :destroy
   has_many :companies, :through => :affiliations
+
+  has_many :assemblies
+  has_many :combinations, :through => :assemblies
+
   accepts_nested_attributes_for :companies, :affiliations, :allow_destroy => true
 
   acts_as_gmappable :process_geocoding => false

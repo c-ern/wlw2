@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @car_body_style.name %>
+</p>
+
+<p>
+  <b>Wikipedia url:</b>
+  <%= @car_body_style.wikipedia_url %>
+</p>
+
+
+<%= link_to 'Edit', edit_car_body_style_path(@car_body_style) %> |
+<%= link_to 'Back', car_body_styles_path %>

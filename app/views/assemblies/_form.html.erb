@@ -1,0 +1,41 @@
+<%= form_for(@assembly) do |f| %>
+  <% if @assembly.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@assembly.errors.count, "error") %> prohibited this assembly from being saved:</h2>
+
+      <ul>
+      <% @assembly.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :facility_id %><br />
+    <%= f.select :facility_id, options_from_collection_for_select(@facilities, :id, :name) %>
+    <%#= f.select :product_id, options_from_collection_for_select(Product.all, :id, :name) %>
+    <%#= f.select :style, options_from_collection_for_select(CarBodyStyle.all, :id, :name) %>
+  </div>
+  <div class="field">
+    <%= f.label :combination_id %><br />
+    <%= f.number_field :combination_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<%= form_tag(@assembly) do %>
+
+  <div class="field">
+    <%= label_tag :facility_id %><br />
+    <%= select_tag :facility_id, options_from_collection_for_select(@facilities, :id, :name) %>
+    <%= select_tag :product_id, options_from_collection_for_select(Product.all, :id, :name) %>
+    <%= select_tag :style, options_from_collection_for_select(CarBodyStyle.all, :id, :name) %>
+  </div>
+ 
+  <div class="actions">
+    <%= submit_tag %>
+  </div>
+<% end %>

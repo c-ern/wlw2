@@ -11,13 +11,34 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120908114024) do
+ActiveRecord::Schema.define(:version => 20120924184430) do
 
   create_table "affiliations", :force => true do |t|
     t.integer  "company_id"
     t.integer  "facility_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "assemblies", :force => true do |t|
+    t.integer  "facility_id"
+    t.integer  "combination_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  create_table "car_body_styles", :force => true do |t|
+    t.string   "name"
+    t.string   "wikipedia_url"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  create_table "combinations", :force => true do |t|
+    t.integer  "product_id"
+    t.integer  "car_body_style_id"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
   end
 
   create_table "companies", :force => true do |t|
@@ -36,6 +57,13 @@ ActiveRecord::Schema.define(:version => 20120908114024) do
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
     t.string   "wikipedia_url"
+  end
+
+  create_table "products", :force => true do |t|
+    t.string   "name"
+    t.string   "wikipedia_url"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
 end
