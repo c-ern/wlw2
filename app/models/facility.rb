@@ -8,8 +8,8 @@ class Facility < ActiveRecord::Base
   has_many :affiliations, :dependent => :destroy
   has_many :companies, :through => :affiliations
 
-  has_many :manufactures
-  has_many :products, :through => :manufactures
+  has_many :assemblies
+  has_many :car_configurations, :through => :assemblies
   
   accepts_nested_attributes_for :companies, :affiliations, :allow_destroy => true
 

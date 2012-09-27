@@ -1,7 +1,11 @@
 Wlw2::Application.routes.draw do
-  resources :manufactures
+  resources :assemblies
 
-  resources :products
+  resources :car_configurations
+
+  resources :car_body_styles
+
+  resources :car_types
 
   resources :affiliations
 

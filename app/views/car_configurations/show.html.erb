@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Car type:</b>
+  <%= @car_configuration.car_type_id %>
+</p>
+
+<p>
+  <b>Car body style:</b>
+  <%= @car_configuration.car_body_style_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_car_configuration_path(@car_configuration) %> |
+<%= link_to 'Back', car_configurations_path %>

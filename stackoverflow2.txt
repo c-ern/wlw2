@@ -1,0 +1,35 @@
+
+
+Maybe I am a little slow on the uptake today (I can't even phrase a proper caption), but I want to solve this issue:
+
+I want to expand my model from my previous question.
+Short recap:
+
+A supermarket can hold many products and each product can be sold in many supermarkets. The association is build via the Supply-model.
+Expansion:
+
+Now I want to expand this model: Let's say I have a product *Cornflakes* (the fruit). It can come in different cultivars: i.e. "Granny Smith", "Golden Delicious" and so on.
+
+In Supermarket 1 I can buy
+
+    Apple -> "Granny Smith"
+    Apple -> "Golden Delicious"
+
+In Supermarket 2 I can buy
+
+    Apple -> "Braeburn"
+    Apple -> "Golden Delicious"
+    Apple -> "McIntosh" (really, that's an apple cultivar).
+
+What Models do I have to create additionally and how do I have to link them up? I suppose something like polymorphic associations, but I don't really have a clue...
+
+Edit:
+A more common issue is to have different companies that deliver the same product: *Cornflakes* can be supplied by *Kellog's* or *General Mills* or so on, where at the same time these companies produce many products:
+
+Supermarket 1 sells:
+    * Cornflakes -> Kellog's
+    * Cornflakes -> General Mills
+
+Supermarket 2 sells:
+	* Cornflakes -> Kellog's
+	* Rice Kriespies -> Kellog's
