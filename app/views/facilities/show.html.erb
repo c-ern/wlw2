@@ -45,7 +45,15 @@
         <%= link_to(@facility.wikipedia_url, @facility.wikipedia_url) %>
       </p>
       
-      
+      <!-- Hier möchte ich alle Autos anzeigen, die gebaut werden -->
+      <h3>Modelle:</h3>
+      <ul>
+        <% for cc in @facility.car_configurations %>
+          <li><%= cc.car_type.name %>, <%= cc.car_body_style.name %></li>
+        <% end %>
+      </ul>
+
+
       <!-- hier möchte ich jetzt alle anderen Werke in der Nähe anzeigen -->
       <h3>Werke in der Nähe</h3>
       <ul>

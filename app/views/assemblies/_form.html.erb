@@ -23,3 +23,16 @@
     <%= f.submit %>
   </div>
 <% end %>
+
+<%= form_tag(@assembly) do %>
+  <div class="field">
+    <%= label_tag :facility_id %><br />
+    <%= select_tag :facility_id, options_from_collection_for_select(@facilities, :id, :name) %>
+    <%= select_tag :car_type_id, options_from_collection_for_select(@car_types, :id, :name) %>
+    <%= select_tag :car_body_style_id, options_from_collection_for_select(@car_body_styles, :id, :name) %>
+  </div>
+
+  <div class="actions">
+    <%= submit_tag %>
+  </div>
+<% end %>
