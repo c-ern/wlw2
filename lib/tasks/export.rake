@@ -19,7 +19,7 @@ namespace :export do
         for cc in facility.car_configurations
           ctype = cc.car_type
           cstyle = cc.car_body_style
-          puts "confi = CarConfiguration.find_or_create_by_car_type_name_and_car_body_style_name(\"#{ctype.name}\", \"#{cstyle.name}\")"
+          puts "confi = CarConfiguration.find_or_create_by_car_type_id_and_car_body_style_id(\"#{ctype.id}\", \"#{cstyle.id}\")"
           puts "Assembly.create(facility_id: #{facility.id}, car_configuration_id: confi.id)"
         end
 
