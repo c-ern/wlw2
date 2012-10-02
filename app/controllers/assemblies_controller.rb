@@ -29,7 +29,7 @@ class AssembliesController < ApplicationController
     @car_configurations = CarConfiguration.all
     @car_types = CarType.all
     @car_body_styles = CarBodyStyle.all
-
+    
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @assembly }
@@ -47,8 +47,12 @@ class AssembliesController < ApplicationController
     #@assembly = Assembly.new(params[:assembly])
     @assembly = Assembly.new()
     @assembly.facility_id = params[:facility_id]
-    confi = CarConfiguration.find_or_create_by_car_type_id_and_car_body_style_id(params[:car_type_id], params[:car_body_style_id])
-    @assembly.car_configuration_id = confi.id
+    params[:car_body_style_id].each do |cbs|
+      confi = CarConfiguration.find_or_create_by_car_type_id_and_car_body_style_id(params[:car_type_id], cbs)
+      # @assembly.car_configuration_id = confi.id
+      @assi = Assembly.find_or_create_by_facility_id_and_car_configuration_id(@assembly.facility_id, confi.id)
+    end
+    @assembly = @assi
 
     respond_to do |format|
       if @assembly.save

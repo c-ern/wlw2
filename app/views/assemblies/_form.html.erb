@@ -27,9 +27,9 @@
 <%= form_tag(@assembly) do %>
   <div class="field">
     <%= label_tag :facility_id %><br />
-    <%= select_tag :facility_id, options_from_collection_for_select(@facilities, :id, :name) %>
-    <%= select_tag :car_type_id, options_from_collection_for_select(@car_types, :id, :name) %>
-    <%= select_tag :car_body_style_id, options_from_collection_for_select(@car_body_styles, :id, :name) %>
+    <%= select_tag :facility_id, option_groups_from_collection_for_select(Company.all, :facilities, :name, :id, :name) %>
+    <%= select_tag :car_type_id, option_groups_from_collection_for_select(Company.all, :car_types, :name, :id, :name) %>
+    <%= select_tag :car_body_style_id, options_from_collection_for_select(@car_body_styles, :id, :name), { :multiple => true } %>
   </div>
 
   <div class="actions">

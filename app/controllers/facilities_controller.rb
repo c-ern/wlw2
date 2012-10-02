@@ -53,6 +53,11 @@ class FacilitiesController < ApplicationController
     @facility = Facility.new
     @facility.affiliations.build # damit die Felder angelegt werden
 
+    @car_configurations = CarConfiguration.all
+    @car_types = CarType.all
+    @car_body_styles = CarBodyStyle.all
+
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @facility }
@@ -85,6 +90,10 @@ class FacilitiesController < ApplicationController
   # PUT /facilities/1.json
   def update
     @facility = Facility.find(params[:id])
+    
+    @car_configurations = CarConfiguration.all
+    @car_types = CarType.all # where(:company_id => Facility.find(params[:id]).companies.first.id)
+    @car_body_styles = CarBodyStyle.all
 
     respond_to do |format|
       if @facility.update_attributes(params[:facility])

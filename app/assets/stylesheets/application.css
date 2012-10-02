@@ -62,6 +62,7 @@ html, body {
   width: 38%;
   height: 46%;
   background-color: #FFFFCC;
+  font-size: x-small;
 }
 #wikipedia {
   position:absolute;
@@ -83,3 +84,7 @@ html, body {
     background-color: #D8D8D8;
     color: black;
  }
+ div p, li, h1, h2, h3 {
+  font-size: 0.9em;
+  line-height: 100%;
+}
