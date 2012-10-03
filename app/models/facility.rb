@@ -1,5 +1,5 @@
 class Facility < ActiveRecord::Base
-  attr_accessible :address, :latitude, :longitude, :name, :companies_attributes, :affiliations_attributes, :wikipedia_url, :company_ids
+  attr_accessible :address, :latitude, :longitude, :name, :companies_attributes, :affiliations_attributes, :wikipedia_url, :company_ids, :assemblies_attributes
   
   # die folgenden beiden Zeilen müssen für das Betanken der Datenbank mit seeds.rb auskommentiert werden
   geocoded_by :address # hier sage ich, dass der geocode auf der Adresse basiert
@@ -11,7 +11,7 @@ class Facility < ActiveRecord::Base
   has_many :assemblies
   has_many :car_configurations, :through => :assemblies
   
-  accepts_nested_attributes_for :companies, :affiliations, :allow_destroy => true
+  accepts_nested_attributes_for :companies, :affiliations, :assemblies, :allow_destroy => true
 
   acts_as_gmappable :process_geocoding => false
     def gmaps4rails_address

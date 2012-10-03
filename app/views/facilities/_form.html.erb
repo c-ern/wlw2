@@ -31,6 +31,12 @@
   <div class="field">
   <%= collection_select(:facility, :company_ids, Company.all, :id, :name, {}, { :multiple => true } )%>
   </div>
+  <div class="field">
+    <%= collection_select(:assembly1, :car_type_ids, CarType.all, :id, :name, {}, { :multiple => false } )%>
+  </div>
+  <div class="field">
+    <%= collection_select(:assembly2, :car_body_style_ids, CarBodyStyle.all, :id, :name, {}, { :multiple => true } )%>
+  </div>
 
  <!--  <div class="field">
   <%#= collection_select(:facility, :car_configuration_ids, CarType.all, :id, :name, {}, { :multiple => true } )%>
@@ -61,19 +67,10 @@
     <%= f.text_field :wikipedia_url %>
   </div>
   
+
+
   <div class="actions">
     <%= f.submit %>
   </div>
-<% end %>
-
-<%= form_tag(@assembly) do %>
-  <div class="field">
-    <%= label_tag :car_type_id %><br />
-    <%= select_tag :car_type_id, options_from_collection_for_select(@car_types, :id, :name, 2) %>
-    <%= select_tag :car_body_style_id, options_from_collection_for_select(@car_body_styles, :id, :name, nil) %>
-  </div>
-
-  <div class="actions">
-    <%= submit_tag %>
-  </div>
+  
 <% end %>

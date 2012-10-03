@@ -74,6 +74,19 @@ class FacilitiesController < ApplicationController
   # POST /facilities.json
   def create
     @facility = Facility.new(params[:facility])
+    @facid = @facility.id
+    @assembly_ct = params[:assembly1].values[0]
+    @assembly_cbs = Array.new
+    @assembly_cbs = params[:assembly2].values[0]
+    
+    @assembly_cbs.each do |cbs|
+      confi = CarConfiguration.find_or_create_by_car_type_id_and_car_body_style_id(@assembly_ct, cbs)
+      # @assembly.car_configuration_id = confi.id
+      @assi = Assembly.find_or_create_by_facility_id_and_car_configuration_id(@facid, confi.id)
+    end
+
+
+
 
     respond_to do |format|
       if @facility.save
@@ -90,10 +103,7 @@ class FacilitiesController < ApplicationController
   # PUT /facilities/1.json
   def update
     @facility = Facility.find(params[:id])
-    
-    @car_configurations = CarConfiguration.all
-    @car_types = CarType.all # where(:company_id => Facility.find(params[:id]).companies.first.id)
-    @car_body_styles = CarBodyStyle.all
+
 
     respond_to do |format|
       if @facility.update_attributes(params[:facility])

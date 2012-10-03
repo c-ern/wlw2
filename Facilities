@@ -1,0 +1,47 @@
+Facilities
+
+{"utf8"=>"✓",
+ "authenticity_token"=>"5CGDsriYGgXmqq/Mqvk8SOtQkGGkkvwWGcMMx+8gEUM=",
+ "facility"=>{"company_ids"=>["",
+ "3"],
+ "name"=>"asdggdfdfhds",
+ "address"=>"",
+ "latitude"=>"",
+ "longitude"=>"",
+ "wikipedia_url"=>""},
+ "assembly"=>{"car_type_ids"=>"2",
+ "car_body_style_ids"=>["",
+ "2",
+ "3",
+ "4"]},
+ "commit"=>"Create Facility"}
+
+ Assemblies
+
+ utf8:✓
+authenticity_token:5CGDsriYGgXmqq/Mqvk8SOtQkGGkkvwWGcMMx+8gEUM=
+facility_id:2
+car_type_id:2
+car_body_style_id[]:2
+commit:Save changes
+
+Facilities 2
+
+utf8:✓
+authenticity_token:5CGDsriYGgXmqq/Mqvk8SOtQkGGkkvwWGcMMx+8gEUM=
+facility[company_ids][]:
+facility[company_ids][]:2
+assembly1[car_type_ids]:2
+assembly2[car_body_style_ids][]:
+assembly2[car_body_style_ids][]:2
+assembly2[car_body_style_ids][]:3
+assembly2[car_body_style_ids][]:4
+facility[name]:hallo
+facility[address]:
+facility[latitude]:
+facility[longitude]:
+facility[wikipedia_url]:
+commit:Create Facility
+
+assemblies2= {"car_body_style_ids"=>["", "2", "3", "4"]}
+assembly1= { "car_type_ids"=>"2" }
