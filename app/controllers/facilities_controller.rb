@@ -73,24 +73,27 @@ class FacilitiesController < ApplicationController
   # POST /facilities
   # POST /facilities.json
   def create
-    @facility = Facility.new(params[:facility])
-    @facid = @facility.id
     @assembly_ct = params[:assembly1].values[0]
     @assembly_cbs = Array.new
     @assembly_cbs = params[:assembly2].values[0]
-    
+    # @confu = Array.new
     @assembly_cbs.each do |cbs|
       confi = CarConfiguration.find_or_create_by_car_type_id_and_car_body_style_id(@assembly_ct, cbs)
+      @confu = confi.id
       # @assembly.car_configuration_id = confi.id
-      @assi = Assembly.find_or_create_by_facility_id_and_car_configuration_id(@facid, confi.id)
+      # @assi = Assembly.find_or_create_by_facility_id_and_car_configuration_id(@facid, confi.id)
     end
 
-
-
+    @facility = Facility.new(params[:facility])
+    # @facility.company_ids = params[:facility].values[0]
+    #render text: params
 
     respond_to do |format|
       if @facility.save
-        format.html { redirect_to @facility, notice: 'Facility was successfully created.' }
+        format.html { 
+          # redirect_to @facility, notice: 'Facility was successfully created.'
+          render text: params
+         }
         format.json { render json: @facility, status: :created, location: @facility }
       else
         format.html { render action: "new" }

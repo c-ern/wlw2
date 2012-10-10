@@ -38,6 +38,8 @@
     <%= collection_select(:assembly2, :car_body_style_ids, CarBodyStyle.all, :id, :name, {}, { :multiple => true } )%>
   </div>
 
+  <%= render :text => params %>
+
  <!--  <div class="field">
   <%#= collection_select(:facility, :car_configuration_ids, CarType.all, :id, :name, {}, { :multiple => true } )%>
   </div> -->

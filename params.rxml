@@ -1,0 +1,11 @@
+{"utf8"=>"✓", 
+	"authenticity_token"=>"7jMsCLYUro/6Sb7ZilIQ8BbE3TU4iknxv+gzsG7cOZA=",
+	"facility"=>{"company_ids"=>["", "1"], 
+				"name"=>"rrrnnnttt", 
+				"address"=>"", 
+				"latitude"=>"", 
+				"longitude"=>"", 
+				"wikipedia_url"=>""}, 
+	"assembly1"=>{"car_type_ids"=>"1"}, 
+	"assembly2"=>{"car_body_style_ids"=>["", "2", "3"]}, 
+	"commit"=>"Create Facility", "action"=>"create", "controller"=>"facilities"}
