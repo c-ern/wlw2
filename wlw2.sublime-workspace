@@ -1,0 +1,313 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"com",
+				"combinations"
+			],
+			[
+				"facilit",
+				"facility_id"
+			],
+			[
+				"ass",
+				"assembly"
+			],
+			[
+				"par",
+				"params"
+			],
+			[
+				"wh",
+				"while	while ... end"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "lib/tasks/export.rake",
+			"settings":
+			{
+				"buffer_size": 1451,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "db/seeds.rb",
+			"settings":
+			{
+				"buffer_size": 2930,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 311.0,
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Sites/wlw2/db/seeds.rb",
+		"/C/Sites/wlw2/app/models/facility.rb",
+		"/C/Sites/wlw2/app/models/combination.rb",
+		"/C/Users/Chris/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/C/Sites/wlw2/app/models/assembly.rb",
+		"/C/Sites/wlw2/app/models/product.rb",
+		"/C/Sites/wlw2/app/models/car_body_style.rb",
+		"/C/Sites/wlw2/app/controllers/combinations_controller.rb",
+		"/C/Sites/wlw2/app/views/assemblies/_form.html.erb",
+		"/C/Users/Chris/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/C/Sites/wlw2/app/controllers/assemblies_controller.rb",
+		"/C/Sites/wlw2/app/views/products/edit.html.erb",
+		"/C/Sites/wlw2/app/assets/stylesheets/gmaps4rails.css",
+		"/C/RailsInstaller/Git/etc/gitconfig",
+		"/C/Sites/wlw2/app/assets/stylesheets/application.css",
+		"/C/Sites/wlw2/app/views/facilities/show.html.erb",
+		"/C/Sites/agile/depot_e/app/assets/stylesheets/application.css.scss",
+		"/C/Sites/agile/depot_e/app/assets/stylesheets/products.css.scss",
+		"/C/Sites/agile/depot_e/app/views/layouts/application.html.erb",
+		"/C/Users/Chris/AppData/Roaming/Sublime Text 2/Packages/User/Package Control.sublime-settings",
+		"/C/Sites/wlw2/app/assets/stylesheets/affiliations.css.scss",
+		"/C/Sites/wlw2/app/views/layouts/application.html.erb",
+		"/C/Users/Chris/AppData/Roaming/Sublime Text 2/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Sites/gtest/app/views/users/show.html.erb",
+		"/C/Sites/gtest/Gemfile",
+		"/C/Sites/Google-Maps-for-Rails/vendor/assets/javascripts/gmaps4rails/google.coffee",
+		"/C/Sites/Google-Maps-for-Rails/vendor/assets/javascripts/gmaps4rails/google/shared.coffee",
+		"/C/Sites/wlw2/Gemfile",
+		"/C/Sites/wlw2/app/views/facilities/index.html.erb",
+		"/C/Sites/Google-Maps-for-Rails/spec/lib/direction_spec.rb",
+		"/C/Sites/Google-Maps-for-Rails/lib/gmaps4rails/api_wrappers/direction.rb",
+		"/C/Sites/Google-Maps-for-Rails/vendor/assets/javascripts/gmaps4rails/google/main.coffee",
+		"/C/Sites/gtest/config/initializers/gmaps4rails_initializer.rb",
+		"/C/Sites/gtest/config/initializers/backtrace_silencers.rb",
+		"/C/Sites/gtest/config/initializers/session_store.rb",
+		"/C/Sites/gtest/config/initializers/secret_token.rb",
+		"/C/Sites/gtest/app/assets/javascripts/gmaps4rails/gmaps4rails.googlemaps.js.coffee",
+		"/C/Sites/gtest/app/assets/javascripts/gmaps4rails/gmaps4rails.base.js.coffee",
+		"/C/Sites/gtest/app/assets/stylesheets/application.css",
+		"/C/Sites/gtest/app/assets/stylesheets/gmaps4rails.css",
+		"/C/Sites/Google-Maps-for-Rails/lib/generators/gmaps4rails/install_generator.rb",
+		"/C/Sites/Google-Maps-for-Rails/gmaps4rails.gemspec",
+		"/C/Sites/Google-Maps-for-Rails/spec/models/place_spec.rb",
+		"/C/Sites/gtest/app/controllers/users_controller.rb",
+		"/C/Sites/wlw2/app/controllers/facilities_controller.rb",
+		"/C/Sites/wlw2/app/assets/javascripts/gmaps4rails/gmaps4rails.googlemaps.js.coffee",
+		"/C/Sites/wlw2/app/assets/javascripts/gmaps4rails/gmaps4rails.base.js.coffee",
+		"/C/Sites/jukebox/db/seeds.rb",
+		"/C/Sites/wlw2/config/database.yml",
+		"/C/Sites/wlw2/config/environment.rb",
+		"/C/Sites/wlw2/config.ru",
+		"/C/Sites/wlw2/app/models/company.rb",
+		"/C/Sites/wlw2/doc/migrieren.rb",
+		"/C/Sites/wlw2/doc/migrieren/Rakefile.rb",
+		"/C/Sites/wlw2/doc/migrieren/migrieren.rb",
+		"/C/Sites/wlw2/app/models/affiliation.rb",
+		"/C/Sites/wlw2/db/migrate/20120906101909_create_companies.rb",
+		"/C/Sites/wlw2/db/migrate/20120906102209_create_affiliations.rb"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"font",
+			"defaultLineEnding",
+			"file",
+			"sensor"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "lib/tasks/export.rake",
+					"settings":
+					{
+						"buffer_size": 1451,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "db/seeds.rb",
+					"settings":
+					{
+						"buffer_size": 2930,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1171,
+								1171
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.5,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"seeds.rb",
+				"db/seeds.rb"
+			],
+			[
+				"rake",
+				"lib/tasks/export.rake"
+			],
+			[
+				"assembliescon",
+				"app/controllers/assemblies_controller.rb"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 233.0,
+	"status_bar_visible": true
+}

@@ -11,7 +11,7 @@ class Facility < ActiveRecord::Base
   has_many :assemblies
   has_many :car_configurations, :through => :assemblies
   
-  accepts_nested_attributes_for :companies, :affiliations, :assemblies, :allow_destroy => true
+  accepts_nested_attributes_for :companies, :affiliations, :allow_destroy => true
 
   acts_as_gmappable :process_geocoding => false
     def gmaps4rails_address

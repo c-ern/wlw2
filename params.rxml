@@ -9,3 +9,24 @@
 	"assembly1"=>{"car_type_ids"=>"1"}, 
 	"assembly2"=>{"car_body_style_ids"=>["", "2", "3"]}, 
 	"commit"=>"Create Facility", "action"=>"create", "controller"=>"facilities"}
+
+	config => {1 => [], 2 => []}
+
+	{
+		"utf8"=>"✓", 
+		"authenticity_token"=>"kirmHpvKDBToRa+U6+Rzhf42cXZpd0V6mMdjmt2x73w=", 
+		"facility"=>{
+			"company_ids"=>["", "2"], 
+			"name"=>"audi-test", 
+			"address"=>"rathausplatz. 1, 91052 erlangen", 
+			"latitude"=>"", 
+			"longitude"=>"", 
+			"wikipedia_url"=>""}, 
+		"assembly1"=>{"car_type_ids"=>"6"}, 
+		"assembly2"=>{"car_body_style_ids"=>["", "4", "5", "7"]}, 
+		"commit"=>"Create Facility", 
+		"action"=>"create", 
+		"controller"=>"facilities"
+	}
+
+	{"utf8"=>"✓", "authenticity_token"=>"kirmHpvKDBToRa+U6+Rzhf42cXZpd0V6mMdjmt2x73w=", "facility"=>{"company_ids"=>["", "2"], "name"=>"audi-test", "address"=>"rathausplatz. 1, 91052 erlangen", "latitude"=>"", "longitude"=>"", "wikipedia_url"=>""}, "assembly1"=>{"car_type_ids"=>"6"}, "assembly2"=>{"car_body_style_ids"=>["", "4", "5", "7"]}, "commit"=>"Create Facility", "action"=>"create", "controller"=>"facilities"}

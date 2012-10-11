@@ -73,26 +73,44 @@ class FacilitiesController < ApplicationController
   # POST /facilities
   # POST /facilities.json
   def create
-    @assembly_ct = params[:assembly1].values[0]
-    @assembly_cbs = Array.new
-    @assembly_cbs = params[:assembly2].values[0]
+    @facility = Facility.create(params[:facility])
+
+    @assembly_ct = params[:assembly1][:car_type_ids]
+    # @assembly_cbs = Array.new
+    @assembly_cbs = params[:assembly2][:car_body_style_ids]
     # @confu = Array.new
+    # cc = @facility.car_configurations.new
     @assembly_cbs.each do |cbs|
-      confi = CarConfiguration.find_or_create_by_car_type_id_and_car_body_style_id(@assembly_ct, cbs)
-      @confu = confi.id
+      # confi=@facility.car_configurations.find_or_create_by_car_type_id_and_car_body_style_id(@assembly_ct, cbs)
+      cconf = CarConfiguration.where(:car_type_id => @assembly_ct, :car_body_style_id => cbs).first_or_create
+      @confi=@facility.car_configurations.create(:id => cconf.id)
+      @cconfaussen = cconf
+      # confi.save
+      # @facility.car_configuration.setup_car(assembly_ct, cbs)        
+      # confi = CarConfiguration.find_or_create_by_car_type_id_and_car_body_style_id(assembly_ct, cbs)
+      # @confu = confi.id
       # @assembly.car_configuration_id = confi.id
       # @assi = Assembly.find_or_create_by_facility_id_and_car_configuration_id(@facid, confi.id)
     end
-
-    @facility = Facility.new(params[:facility])
+    peter = String.new
+    peter << params.to_s
+    peter << "<br />"
+    peter << @assembly_ct
+    peter << "<br />"
+    peter << @assembly_cbs[1]
+    peter << "<br />"
+    peter << @confi.to_s
+    peter << "<br />"
+    peter << @cconfaussen.to_s
+    
     # @facility.company_ids = params[:facility].values[0]
-    #render text: params
+    # render text: assembly_ct
 
     respond_to do |format|
       if @facility.save
         format.html { 
           # redirect_to @facility, notice: 'Facility was successfully created.'
-          render text: params
+          render text: peter
          }
         format.json { render json: @facility, status: :created, location: @facility }
       else
