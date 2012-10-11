@@ -30,3 +30,23 @@
 	}
 
 	{"utf8"=>"✓", "authenticity_token"=>"kirmHpvKDBToRa+U6+Rzhf42cXZpd0V6mMdjmt2x73w=", "facility"=>{"company_ids"=>["", "2"], "name"=>"audi-test", "address"=>"rathausplatz. 1, 91052 erlangen", "latitude"=>"", "longitude"=>"", "wikipedia_url"=>""}, "assembly1"=>{"car_type_ids"=>"6"}, "assembly2"=>{"car_body_style_ids"=>["", "4", "5", "7"]}, "commit"=>"Create Facility", "action"=>"create", "controller"=>"facilities"}
+
+
+	{"utf8"=>"✓", "authenticity_token"=>"0KF5Qg+bS5CH5Kb1cG26pb59I/GJIysZw4IWsynFDSI=", "facility"=>{"company_ids"=>["", "3"], "name"=>"mercedesaus", "address"=>"", "latitude"=>"", "longitude"=>"", "wikipedia_url"=>""}, "assembly1"=>{"car_type_ids"=>"4"}, "assembly2"=>{"car_body_style_ids"=>["", "1", "2", "3", "4"]}, "commit"=>"Create Facility", "action"=>"create", "controller"=>"facilities"}
+
+
+4
+1
+
+
+@facility = Facility.create({"company_ids"=>["", "3"], "name"=>"mercedesconsole", "address"=>"", "latitude"=>"", "longitude"=>"", "wikipedia_url"=>""})
+@assembly_ct = 4
+assembly_cbs = ["", "1", "2", "3", "4"]
+
+assembly_cbs.each do |cbs|
+	if cbs == ""
+	else
+		cconf = CarConfiguration.where(:car_type_id => @assembly_ct, :car_body_style_id => cbs).first_or_create  
+		@confi = @facility.car_configurations.create(:id => cconf.id)
+	end
+endend

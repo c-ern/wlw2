@@ -80,11 +80,19 @@ class FacilitiesController < ApplicationController
     @assembly_cbs = params[:assembly2][:car_body_style_ids]
     # @confu = Array.new
     # cc = @facility.car_configurations.new
+    # @carconf = @facility.car_configurations.new
+
     @assembly_cbs.each do |cbs|
       # confi=@facility.car_configurations.find_or_create_by_car_type_id_and_car_body_style_id(@assembly_ct, cbs)
-      cconf = CarConfiguration.where(:car_type_id => @assembly_ct, :car_body_style_id => cbs).first_or_create
-      @confi=@facility.car_configurations.create(:id => cconf.id)
-      @cconfaussen = cconf
+      
+      if cbs == "" # weil aus dem select auch leere eintraege rausfallen
+      else
+        cconf = CarConfiguration.where(:car_type_id => @assembly_ct, :car_body_style_id => cbs).first_or_create  
+        # @confi=@facility.car_configurations.find_by_id(cconf.id)
+        confi = @facility.assemblies.create(:car_configuration_id => cconf.id)
+        @cconfaussen = cconf
+      end
+
       # confi.save
       # @facility.car_configuration.setup_car(assembly_ct, cbs)        
       # confi = CarConfiguration.find_or_create_by_car_type_id_and_car_body_style_id(assembly_ct, cbs)
