@@ -68,19 +68,21 @@ class FacilitiesController < ApplicationController
   def edit
     @facility = Facility.find(params[:id])
     @affiliation = Affiliation.all
+    @assembly1 = @facility
+    @assembly2 = @facility
+
+    # @car_type_ids = @facility.car_configurations.first.car_type_id
+    
   end
 
   # POST /facilities
   # POST /facilities.json
   def create
-    @facility = Facility.create(params[:facility])
+    @facility = Facility.create(params[:facility]) # damit ueberhaupt mal die facility da ist und eine id hat
 
     @assembly_ct = params[:assembly1][:car_type_ids]
-    # @assembly_cbs = Array.new
     @assembly_cbs = params[:assembly2][:car_body_style_ids]
     # @confu = Array.new
-    # cc = @facility.car_configurations.new
-    # @carconf = @facility.car_configurations.new
 
     @assembly_cbs.each do |cbs|
       # confi=@facility.car_configurations.find_or_create_by_car_type_id_and_car_body_style_id(@assembly_ct, cbs)
@@ -96,7 +98,6 @@ class FacilitiesController < ApplicationController
       # confi.save
       # @facility.car_configuration.setup_car(assembly_ct, cbs)        
       # confi = CarConfiguration.find_or_create_by_car_type_id_and_car_body_style_id(assembly_ct, cbs)
-      # @confu = confi.id
       # @assembly.car_configuration_id = confi.id
       # @assi = Assembly.find_or_create_by_facility_id_and_car_configuration_id(@facid, confi.id)
     end
@@ -111,8 +112,6 @@ class FacilitiesController < ApplicationController
     peter << "<br />"
     peter << @cconfaussen.to_s
     
-    # @facility.company_ids = params[:facility].values[0]
-    # render text: assembly_ct
 
     respond_to do |format|
       if @facility.save
@@ -132,6 +131,20 @@ class FacilitiesController < ApplicationController
   # PUT /facilities/1.json
   def update
     @facility = Facility.find(params[:id])
+
+    @assembly_ct = params[:assembly1][:car_type_ids]
+    @assembly_cbs = params[:assembly2][:car_body_style_ids]
+
+    @assembly_cbs.each do |cbs|
+
+      if cbs == "" # weil aus dem select auch leere eintraege rausfallen
+      else
+        cconf = CarConfiguration.where(:car_type_id => @assembly_ct, :car_body_style_id => cbs).first_or_create  
+        # @confi=@facility.car_configurations.find_by_id(cconf.id)
+        confi = @facility.update_attributes(:car_configuration => cconf)
+      end
+
+    end
 
 
     respond_to do |format|

@@ -29,13 +29,13 @@
   <%# end -%> -->
   
   <div class="field">
-  <%= collection_select(:facility, :company_ids, Company.all, :id, :name, {}, { :multiple => true } )%>
+  <%= collection_select(:facility, :company_ids, Company.all, :id, :name, {}, { :multiple => true, :size => Company.count } )%>
   </div>
   <div class="field">
-    <%= collection_select(:assembly1, :car_type_ids, CarType.all, :id, :name, {}, { :multiple => false } )%>
+    <%= collection_select(:assembly1, :car_type_ids, CarType.all, :id, :name, {}, { :multiple => false } )%> <!-- statt CarType.all koennte man auch ne Variable nehmen, und dann z.B. nur die Autos der Firma auswehlen lassen -->
   </div>
   <div class="field">
-    <%= collection_select(:assembly2, :car_body_style_ids, CarBodyStyle.all, :id, :name, {}, { :multiple => true } )%>
+    <%= collection_select(:assembly2, :car_body_style_ids, CarBodyStyle.all, :id, :name, {}, { :multiple => true, :size => CarBodyStyle.count } )%>
   </div>
 
   <%= render :text => params %>

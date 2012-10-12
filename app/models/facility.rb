@@ -10,6 +10,9 @@ class Facility < ActiveRecord::Base
 
   has_many :assemblies
   has_many :car_configurations, :through => :assemblies
+
+  has_many :car_types, :through => :car_configurations
+  has_many :car_body_styles, :through => :car_configurations
   
   accepts_nested_attributes_for :companies, :affiliations, :allow_destroy => true
 
